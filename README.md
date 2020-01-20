@@ -1,6 +1,9 @@
 # Udacity_DSND_Term2
 Udacity Data Scientist Nanodegree Projects (Term 2)
 
+## Part 7
+
+## Part 8-1: Object-Oriented Programming
 Topics covered in this lesson are:
 * classes and objects
 * attributes and methods
@@ -22,3 +25,16 @@ Here is a list of resources for advanced Python object-oriented programming topi
 
 * Python decorators - Decorators are a short-hand way for using functions inside other functions
   (https://realpython.com/primer-on-python-decorators/)
+
+
+## Part 8-2: Modularizing
+Topics covered in this lesson are:
+* Modularizing code
+* Making a package with Pip, a python package manager: 
+ - Package: a collection of python modules
+ - "__init__.py": Required file for a python package
+ - "from .FileName import ClassName": Grammar for import statement in python3 (for .py files in a package)
+ - "setup.py": Required file to make the folder in the same directory to be recognized as a package by pip
+ - "PackageName.__file__": After you imported the package, this command will return the address where this package is installed 
+ - "pip install .": A command line when you are trying to install the package (in the package directory, where setup.py exists)
+ - "pip install --upgrade .": A command line to upgrade the pre-installed package (you should be in the package directory you want to update)
