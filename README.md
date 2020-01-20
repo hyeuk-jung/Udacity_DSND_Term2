@@ -1,8 +1,9 @@
 # Udacity_DSND_Term2
 Udacity Data Scientist Nanodegree Projects (Term 2)
 
-## Part 7
+# Part 7
 
+# Part 8. Software Engineering
 ## Part 8-1: Object-Oriented Programming
 Topics covered in this lesson are:
 * classes and objects
@@ -38,3 +39,16 @@ Topics covered in this lesson are:
  - "PackageName.__file__": After you imported the package, this command will return the address where this package is installed 
  - "pip install .": A command line when you are trying to install the package (in the package directory, where setup.py exists)
  - "pip install --upgrade .": A command line to upgrade the pre-installed package (you should be in the package directory you want to update)
+
+ ## Part 8-3: Web Development
+ * Basics of a web app
+  - HTML
+  - CSS
+  - Javascript
+
+ * Front-end libraries
+  - Boostrap framework
+  - Plotly visualization
+ 
+ * Back-end libraries
+  - Flask
