@@ -7,5 +7,5 @@ Introduction to Data Science
 ## [Part 8](https://github.com/hyeuk-jung/Udacity_DSND_Term2/tree/master/Part%208.%20Software%20Engineering)
 Soft Engineering
 
-## [Part 9]()
+## [Part 9](https://github.com/hyeuk-jung/Udacity_DSND_Term2/tree/master/Part%209.%20Data%20Engineering)
 Data Engineering

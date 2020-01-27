@@ -10,11 +10,11 @@
     2) ELT (Extract, Load, Transform)
 
  ### 2. ETL pipeline
-    1) Extract data from different sources such as: 
+   1. Extract data from different sources such as: 
         * .csv files
         * .json files 
         * APIs
-    2) Transform data
+   2. Transform data
         * combining data from different sources
         * data cleaning
         * data types
@@ -26,11 +26,11 @@
         * remove outliers
         * scaling features (normalizing)
         * engineering features (eg. polynomial variables)
-    3) Load data into database
+   3. Load data into database
         * SQL, csv, json
         * Other data storage systems: [Redis](https://redis.io/), [Cassandra](http://cassandra.apache.org/), [Hbase](http://hbase.apache.org/), [MongoDB](https://www.mongodb.com/)
         * [ranking of database engines](https://db-engines.com/en/ranking)
-    4) Create an ETL pipeline
+   4. Create an ETL pipeline
 
 
 ## Part 9-2: NPL Pipelines
