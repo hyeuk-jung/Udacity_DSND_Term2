@@ -76,7 +76,7 @@ Topics covered in this lesson are:
    - JavaScript: Interactivity
      1. JavaScript: a high level language like Python, PHP, Ruby, and C++. It was specifically developed to make the front-end of a web application more dynamic.
         * Example: 
-            ```html
+            ```javascript
             function addValues(x) { 
                 var sum_array = 0; 
                 for (var i=0; i < x.length; i++) {   
@@ -138,11 +138,11 @@ Topics covered in this lesson are:
         ```
      
      2. Creating new pages (with an example)
-        ```html
-        <!-- @app.route(): place the web address (path) inside the parentheses -->
+        ```python
+        # @app.route(): place the web address (path) inside the parentheses
         @app.route('/homepage') 
         def render_the_route():
-            <!-- index.html file must go in the 'templates' folder -->
+            # index.html file must go in the 'templates' folder
             return render_template('index.html')
         ```
         
@@ -151,7 +151,8 @@ Topics covered in this lesson are:
         * The code ensuring that the web address 'www.some_website.com/homepage` is associated with the index.html template.
      
      3.  Flask with Plotly and Pandas
-            ```html
+
+            ```python
             data = data_wrangling()
 
             @app.route('/')
@@ -168,7 +169,7 @@ Topics covered in this lesson are:
             {% end_for %}
             ```
 
-            ```html
+            ```python
             @app.route('/')
             @app.route('/index')
             def index():
@@ -195,62 +196,62 @@ Topics covered in this lesson are:
      
      2. Code snippet:
         * Step 1. Set an virtual environment and install heroku
-            ```html
-            <!-- Move all of the web app folders and files into web app folder -->
+            ```
+            # Move all of the web app folders and files into web app folder
             mkdir web_app
             mv -t web_app data all_files_and_folders_you_need (eg. worldbankapp wrangling_scripts worldbank.py)
 
-            <!-- Create and activate a virtual environment -->
+            # Create and activate a virtual environment
             conda update python
             python3 -m venv virtual_env_name
             source virtual_env_name/bin/activate
 
-            <!-- Pip install the Python libraries needed for the web app -->
+            # Pip install the Python libraries needed for the web app
             pip install flask pandas plotly gunicorn
 
-            <!-- Install the heroku command line tools -->
+            # Install the heroku command line tools
             curl https://cli-assets.heroku.com/install-ubuntu.sh | sh https://devcenter.heroku.com/articles/heroku-cli#standalone-installation
             heroku —-version
 
-            <!-- Log into herokus -->
+            # Log into herokus
             heroku login
             ```
 
         * Step 2. Update worldbank.py or initializing python file
-            ```html
-            <!-- Before -->
+            ```python
+            # Before 
             from worldbankapp import app
             app.run(host='0.0.0.0', port=3001, debug=True)
 
-            <!-- After -->
+            # After 
             from worldbankapp import app
             ```
         
         * Step 3. Create a proc file, which tells Heroku what to do when starting your web app
-            ```html
+            ```
             touch Procfile
             ```
             In the Procfile, type `web gunicorn worldbank(or initializing python file name):app`
         
         * Step 4. Create a requirements file, which lists all of the Python library that your app depends on
-            ```html
+            ```
             pip freeze > requirements.txt
             ```
 
         * Step 5. Initialize a git repository, configure the email and user name, and make a commit
-            ```html
+            ```
             git init
             git add .
             git config --global user.email email@example.com
             git config --global user.name "my name"
             git commit -m ‘first commit’
 
-            <!-- To check if a remote repository was added to your git repository -->
+            # To check if a remote repository was added to your git repository
             git remote -v
             ```
 
         * Step 6. Create a heroku app and push your git repository to the remote heroku repository
-            ```html
+            ```
             heroku create my-app-name (unique name)
             git push heroku master
             ```
