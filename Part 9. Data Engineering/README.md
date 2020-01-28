@@ -276,7 +276,3 @@
         * `values`: A list of parameter values to check
       * `cv.fit(X_train, y_train)`: This will run cross validation on all different combinations of these parameters to find the best combination of parameters for the model.
 
-## Project: Disaster Response Pipeline
-> Goal: Building a ML pipeline to categorize emergency messages based on the needs communicated by the sender <br>
-> Required skills: data pipelines, NLP pipelines, machine learning pipelines, supervised learning
-
