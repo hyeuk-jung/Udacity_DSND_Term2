@@ -8,7 +8,8 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
-from sklearn.externals import joblib
+# from sklearn.externals import joblib
+from joblib import load
 from sqlalchemy import create_engine
 
 
@@ -30,7 +31,7 @@ engine = create_engine('sqlite:///../data/DisasterResponse.db')
 df = pd.read_sql_table('msg_categories', engine)
 
 # load model
-model = joblib.load("../models/classifier_2.pkl")
+model = load("../models/classifier.pkl") # joblib.
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -42,7 +43,10 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
-    
+
+    category_ratio = df.iloc[:, 4:].sum().sort_values(ascending = False) / df.shape[0]
+    category_list = list(category_ratio.index)
+
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -63,6 +67,24 @@ def index():
                     'title': "Genre"
                 }
             }
+        }, 
+        {
+            'data': [
+                Bar(
+                    x = category_list,
+                    y = category_ratio
+                )
+            ],
+
+            'layout': {
+                'title': 'Proportion of Messages by Category',
+                'yaxis': {
+                    'title': "Proportion"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
         }
     ]
     
@@ -71,7 +93,7 @@ def index():
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
     
     # render web page with plotly graphs
-    return render_template('master.html', ids=ids, graphJSON=graphJSON)
+    return render_template('master.html', ids=ids, graphJSON=graphJSON, data_set=df)
 
 
 # web page that handles user query and displays model results

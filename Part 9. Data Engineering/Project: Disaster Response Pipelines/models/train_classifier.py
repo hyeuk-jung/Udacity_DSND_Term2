@@ -22,9 +22,21 @@ from sqlalchemy import create_engine
 nltk.download(['punkt', 'wordnet', 'stopwords'])
 
 def load_data(database_filepath):
+    ''' load data from SQLite database and split into features (X) and target (Y) dataframe
+    Args:
+    database_filepath: string; filepath of the SQLite db file
+       
+    Returns:
+    X: dataframe; features dataframe 
+    Y: dataframe; target dataframe
+    category_names: target labels
+    '''
+
+    # Connect to the database and load the data
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table('msg_categories', con = engine)
 
+    # Split the loaded dataset into two dataframes and save target label separately
     X = df.message
     Y = df.drop(['id', 'message', 'original', 'genre'], axis = 1)
     category_names = Y.columns
@@ -33,6 +45,14 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    ''' normalize, tokenize, and lemmatize the text data
+    Args:
+    text: string; message in one string
+       
+    Returns:
+    tokens: list; a list of words after normalizing, tokenizing, and lemmatizing
+    '''
+
     # normalize case and remove punctuation
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
     
@@ -48,6 +68,11 @@ def tokenize(text):
 
 
 def build_model():
+    ''' build a model with a pipeline and gridsearch
+    Returns:
+    model: a trained model
+    '''
+
     # build a ml pipeline
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize)),
@@ -62,12 +87,20 @@ def build_model():
 
     # create a model
     model = GridSearchCV(pipeline, param_grid = parameters, cv = 3, \
-                         refit = True, verbose = 5) # , scoring = 'f1'
+                         refit = True, verbose = 5, scoring = 'f1_micro') 
     
     return model
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    ''' evaluate and show the model performance on the test dataset
+    Args: 
+    model: a trained model
+    X_test: test features randomly selected from the original dataset
+    Y_test: test target randomly selected from the original dataset
+    category_names: target labels
+    '''
+
     # predict the result
     Y_pred = model.predict(X_test)
     Y_pred = pd.DataFrame(Y_pred, columns = category_names)
@@ -90,6 +123,11 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    ''' export the final model as a pickle file
+    Args: 
+    model: a trained model
+    model_filepath: string; filepath where the model to be stored 
+    '''
     # filename = 'ML_pipeline_tunedmodel.pkl'
     pickle.dump(model, open(model_filepath, 'wb')) 
 
@@ -99,7 +137,7 @@ def main():
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
         X, Y, category_names = load_data(database_filepath)
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state = 42)
         
         print('Building model...')
         model = build_model()

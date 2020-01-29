@@ -23,10 +23,10 @@ In this project, data engineering, natural language processing, and machine lear
 <a id='software'></a>
 
 ## 2. Software Requirements (Installation)
-  * Python 3.6x or above
-  * Packages mentioned in `requirement.txt`
+  * Anaconda distribution of Pytho (Python 3.6x or above)
+    * For detailed information, check `requirement.txt`
   * From `nltk` package: `punkt`, `wordnet`, and `stopwords`
-
+  
 
 <a id='hierarchy'></a>
 
@@ -89,7 +89,7 @@ In a Python script, `run.py`, you'll need to:
   python run.py
   env | grep WORK
      
-  # In a browser
+  # In a browser (accessing to the Udacity workspace)
   https://SPACEID-3001.SPACEDOMAIN
 
   ```
@@ -99,25 +99,35 @@ In a Python script, `run.py`, you'll need to:
 
 ## 5. Instructions
   1. Run the following commands in the project's root directory to set up your database and model.
-    - To run ETL pipeline that cleans data and stores in database
+      - To run ETL pipeline that cleans data and stores in database
         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
+        ![process_data](process_data.png)  
+      - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+        ![train_classifier_1](train_classifier_1.png)  
+        ![train_classifier_2](train_classifier_2.png)  
+        cf. It took about 10 minutes to train the classifier with grid search.
 
   2. Run the following command in the app's directory to run your web app. `python run.py`
+     ![run_web_app](run_web_app.png)  
 
-  3. Go to http://0.0.0.0:3001/
+  3. Go to http://0.0.0.0:3001/ or https://SPACEID-3001.SPACEDOMAIN/
+      - Initial page
+        ![web_app_first](web_app_first.png)  
+      - Classifying result 
+        ![classifying_result](classifying_result.png)  
 
 
 <a id='conclusion'></a>
 
 ## 6. Conclusion
+Due to the data imbalance, `F1-micro` score was used as a scoring method in hyperparameter tuning. Only focusing on the accuracy of the model would be inappropriate as majority of categories have less than 10% of the sample. 
 
 
 <a id='credits'></a>
 
 ## 7. Credits and Acknowledgements
-  1. [Udacity]()
-  2. [FigureEight](https://www.figure-eight.com/)
+  1. Udacity logo and starter codes: [Udacity](https://www.udacity.com/)
+  2. Proejct data: [FigureEight](https://www.figure-eight.com/)
 
 
