@@ -33,7 +33,7 @@ Each year Stack Overflow field a survey covering everything from developers' fav
      * Variable: `LanguageDesireNextYear`
      * The same method can be applied to `DatabaseDesireNextYear`, `PlatformDesireNextYear`, and `WebFrameDesireNextYearplatforms`
 
-For the simplicity, I focused on fully-employed developers' survey results from top 20 countries. 
+For simplicity, I focused on fully-employed developers' survey results from the top 20 countries.
 
 
 <a id='files'></a>
@@ -43,19 +43,10 @@ For the simplicity, I focused on fully-employed developers' survey results from 
   - stack_overflow_survey_2019_analysis.ipynb
 
   - developer_survey_2019.zip  # Original dataset from Stack Overflow
-<<<<<<< HEAD
-  
-  - developer_survey_2019
   |- README_2019.txt # Description and license information of the dataset
   |- so_survey_2019.pdf # survey form
   |- survey_results_public.csv  # main survey results, one respondent per row and one column per answer
   |- survey_results_schema.csv  # urvey schema, i.e., the questions that correspond to each column name m
-=======
-  |- README_2019.txt # Description and license information of the dataset
-  |- so_survey_2019.pdf # survey form
-  |- survey_results_public.csv  # main survey results, one respondent per row and one column per answer
-  |- survey_results_schema.csv  # urvey schema, i.e., the questions that correspond to each column
->>>>>>> b333723aabcd43e1c993a4370d4c09133bf135dc
 
   - README.md
   ```
@@ -64,14 +55,19 @@ For the simplicity, I focused on fully-employed developers' survey results from 
 <a id='results'></a>
 
 ## 4. Results
-The main findings of the code can be found at the post available [here]().
+The main findings of the code can be found at the post available [here](https://medium.com/@hyeukjung213/for-incoming-developers-what-should-you-expect-from-the-market-and-what-is-expected-from-you-b74fffd4ef31).
 
-For the summary: 
+From the data: 
   1. Male developers outnumber female developers of all ages. So when we compare two genders based on the ratio within each gender, we can observe that the distribution of both sexes is similar in general. Also, about 63% of female developers have age between 20 and 30, and about 54% for male developers, which results in lower average age in female developers.
 
   2. When comparing the salary of two genders based on experience, we could see the increasing trend for male developers. However, it is hard to observe any pattern for female developers. In terms of education level, both genders show a similar trend in salary though female developers' compensation is lower for all levels of education degree.
 
   3. In 2020, `C, R, Java, JavaScript, Python, HTML/CSS, SQL, TypeScript, C#, and Bach/Shell/PowerShell` are the top 10 languages desired to be used.
+
+As a result,
+  1. It is worth spending the extra time and resources on getting a bachelor’s degree. In terms of getting the highest compensation, focus on getting a doctoral degree. Ending up with a master’s degree may not be enough to meet your expectations.
+
+  2. Focus on learning C, R, Java, JavaScript, and Python first if you want to outstand from your competitors.
 
 
 <a id='credits'></a>
