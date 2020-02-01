@@ -43,12 +43,19 @@ For the simplicity, I focused on fully-employed developers' survey results from 
   - stack_overflow_survey_2019_analysis.ipynb
 
   - developer_survey_2019.zip  # Original dataset from Stack Overflow
+<<<<<<< HEAD
   
   - developer_survey_2019
   |- README_2019.txt # Description and license information of the dataset
   |- so_survey_2019.pdf # survey form
   |- survey_results_public.csv  # main survey results, one respondent per row and one column per answer
   |- survey_results_schema.csv  # urvey schema, i.e., the questions that correspond to each column name m
+=======
+  |- README_2019.txt # Description and license information of the dataset
+  |- so_survey_2019.pdf # survey form
+  |- survey_results_public.csv  # main survey results, one respondent per row and one column per answer
+  |- survey_results_schema.csv  # urvey schema, i.e., the questions that correspond to each column
+>>>>>>> b333723aabcd43e1c993a4370d4c09133bf135dc
 
   - README.md
   ```
