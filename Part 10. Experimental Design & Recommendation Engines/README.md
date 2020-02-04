@@ -205,7 +205,3 @@
    > Learn about one of the most popular techniques for recommendation engines known as FunkSVD. You will also complete a class that brings together a number of techniques to make recommendations for a number of different scenarios.
 
 
-
-
-
-   70867 48846-01
