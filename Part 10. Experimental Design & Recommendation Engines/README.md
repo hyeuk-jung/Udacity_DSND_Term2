@@ -200,6 +200,15 @@
  ### 1. Introduction to Recommendation Engines
    > Learn about the main ideas associated with recommendation engines. This includes techniques and measures of effectiveness.
 
+   1. Knowledge Based Recommendations
+      * 
+
+   2. Content Based Recommendations
+      * 
+
+   3. Collaborative Filtering Based Recommendations
+      * asdf
+
 
  ### 2. Matrix Factorization for Recommendations
    > Learn about one of the most popular techniques for recommendation engines known as FunkSVD. You will also complete a class that brings together a number of techniques to make recommendations for a number of different scenarios.
