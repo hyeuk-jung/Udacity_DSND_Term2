@@ -247,9 +247,46 @@
    > Learn about one of the most popular techniques for recommendation engines known as FunkSVD. You will also complete a class that brings together a number of techniques to make recommendations for a number of different scenarios.
 
    1. Validating Recommendations
+      * Online testing
+      * Offline testing: Testing out recommendations in a training-testing environment prior to deploying them.
+      * User groups: Validating your recommendations by having user groups give feedback on items you would recommend for them. Obtaining good user groups that are representative of your customers can be a challenge on its own.
 
-   2. Matrix Factorization: Using Machine Learning to Make Recommendations
+   2. Singular Value Decomposition (SVD)
+      * Why SVD (Singular Value Decomposition)?
+        * Provides a predicted rating value (for every user-item pair), not a list of recommendations.
+        * We can use regression based metrics like MSE or MAE to assess performance.
+        * The metrics can be understood before deploying our recommendations to our customers.
+      
+      * Latent factor: A feature that isn't actually observed in the data, but can be inferred based on the relationships that occur
 
-   3. Cold Start Problem: Recommendations to New Users (Making Predictions)
+      * Singular value decomposition <img src="https://latex.codecogs.com/gif.latex?A&space;=&space;U&space;\Sigma&space;V^T" title="A = U \Sigma V^T" />
+        * A: User-item matrix (n by m)
+        * U: A matrix that provides how users feel about latent features (n by k; rows: users, columns: latent factors).
+        * <img src="https://latex.codecogs.com/gif.latex?\Sigma" title="\Sigma" />: A matrix that provides weights in descending order with how much each latent feature matters towards reconstructing the original user-item matrix (k by k; diagonal). 
+        * <img src="https://latex.codecogs.com/gif.latex?V^T" title="V^T" />: A matrix that provides how items relate to each latent feature (k by m; rows: latent features, columns: items).
+
+      * Takeaways
+        * The latent factors retrieved from SVD aren't actually labeled.
+        * We can get an idea of how many latent factors we might want to keep by using the Sigma matrix. Each value in the Sigma matrix measures how much each feature matters.
+        * SVD in NumPy will not work when our matrix has missing values. This makes this technique less than useful.
+          * SVD closed form solution and related materials: [MIT link](http://web.mit.edu/be.400/www/SVD/Singular_Value_Decomposition.htm), [Stanford discussion on SVD](http://infolab.stanford.edu/~ullman/mmds/ch11.pdf), [Why are Singular Values Always Positive on StackExchange](https://math.stackexchange.com/questions/2060572/why-are-singular-values-always-non-negative), [An additional resource for SVD in Python](https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/), [Using Missing Values to Improve Recommendations in SVD](https://www.hindawi.com/journals/mpe/2015/380472/)
+          * Alternative (and common) approach: Simon Funk using **gradient descent**
+
+   3. Matrix Factorization: Using Machine Learning to Make Recommendations
+      * FunkSVD <img src="https://latex.codecogs.com/gif.latex?A&space;=&space;UV^T" title="A = UV^T" />
+        * U: A matrix that provides information about how users are related to latent features.
+        * <img src="https://latex.codecogs.com/gif.latex?V^T" title="V^T" />:  A matrix that provides information about how much each movie is related to latent features.
+        * This method uses gradient descent to find the latent features.
+      
+      * Takeaways
+        * Pros: 
+          * It is able to predict ratings for all user-movie pairs, even when the total number of ratings is very sparse.
+          * It gives a way to evaluate how good those ratings are using traditional metrics. (e.g. MSE, using train-test split)
+        * Cons: 
+          * It cannot make any prediction for the case that new users or new items to a platform don't have any ratings (e.g. cold start problem). 
+
+   4. Cold Start Problem: Recommendations to New Users (Making Predictions)
+      * Cold start problem: The problem that new users and new items to a platform don't have any ratings.
+        * Content-based recommendations for new items or rank-based (or knowledge-based) recommendations for new users.
 
 
