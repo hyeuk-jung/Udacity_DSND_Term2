@@ -201,16 +201,55 @@
    > Learn about the main ideas associated with recommendation engines. This includes techniques and measures of effectiveness.
 
    1. Knowledge Based Recommendations
-      * 
+      * Knowledge-based recommendations: Knowledge about the item or user preferences are used to make a recommendation.
+
+      * Rank-based recommendations: Recommendations based on highest ratings, most purchases, most listened to, etc.
 
    2. Content Based Recommendations
-      * 
+      * Content-based recommendations: A method of making recommendations using information about the users or items to assist in our recommendations.
+        * Use information that is known about the items or users to find similarities and to recommend new items (e.g. users' previous purchase or reading history). Often the similarities are related to item descriptions or purpose.
 
    3. Collaborative Filtering Based Recommendations
-      * asdf
+      * Collaborative filtering: A method of making recommendations based on using the collaboration of user-item interactions.
+        * Use conections between users and items (e.g. customers having similar preferences)
+
+      * Model-based collaborative filtering
+        * Uses machine learning techniques to make recommendations
+
+      * Neighborhood-based collaborative filtering
+        * Similarity metrics: Some common ways to measure the similarity between two users (or two items). Users or items with the highest values of similarity measures implies they live in closer neighborhoods.
+          * Pearson's correlation coefficient
+          * Spearman's correlation coefficient
+          * Kendall's Tau 
+        * Distance metrics: Users or items with the smallest values of distance measures implies they live in closer neighborhoods.
+          * Euclidean Distance 
+          * Manhattan Distance
+
+      * Other (Advanced) Techniques
+        * [Using embeddings](https://medium.com/airbnb-engineering/listing-embeddings-for-similar-listing-recommendations-and-real-time-personalization-in-search-601172f7603e)
+        * [Location-based recommendations](https://link.springer.com/referenceworkentry/10.1007%2F978-3-319-17885-1_1580)
+        * [Using deep learning](https://ebaytech.berlin/deep-learning-for-recommender-systems-48c786a20e1a)
+
+   4. Types of Ratings
+      * It is important to understand what the data might be used for, and what type of granularity might be important for a particular case.
+        * One of the main considerations is whether you want to have neutrality available, in which case an odd number of possible values in your scale will provide a value in the middle.
+
+   5. [Business Goals of Recommendations](https://gab41.lab41.org/recommender-systems-its-not-all-about-the-accuracy-562c7dceeaff)
+      * Relevance (to users)
+      * Novelty
+      * Serendipity
+      * Increased recommendation diversity
+    
+    cf. MovieTweetings: [White paper](http://crowdrec2013.noahlab.com.hk/papers/crowdrec2013_Dooms.pdf), [Github account set up](https://github.com/sidooms/MovieTweetings), [Simon Doom's slides](https://www.slideshare.net/simondooms/movie-tweetings-a-movie-rating-dataset-collected-from-twitter)
 
 
  ### 2. Matrix Factorization for Recommendations
    > Learn about one of the most popular techniques for recommendation engines known as FunkSVD. You will also complete a class that brings together a number of techniques to make recommendations for a number of different scenarios.
+
+   1. Validating Recommendations
+
+   2. Matrix Factorization: Using Machine Learning to Make Recommendations
+
+   3. Cold Start Problem: Recommendations to New Users (Making Predictions)
 
 
