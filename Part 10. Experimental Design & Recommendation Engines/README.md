@@ -198,7 +198,8 @@
 ## Part 10-2: Recommendation Engines
 
  ### 1. Introduction to Recommendation Engines
-   > Learn about the main ideas associated with recommendation engines. This includes techniques and measures of effectiveness.
+   > Learn about the main ideas associated with recommendation engines. This includes techniques and measures of effectiveness.  <br>
+   > Data used in this section: MovieTweetings - [White paper](http://crowdrec2013.noahlab.com.hk/papers/crowdrec2013_Dooms.pdf), [Github account set up](https://github.com/sidooms/MovieTweetings), [Simon Doom's slides](https://www.slideshare.net/simondooms/movie-tweetings-a-movie-rating-dataset-collected-from-twitter)
 
    1. Knowledge Based Recommendations
       * Knowledge-based recommendations: Knowledge about the item or user preferences are used to make a recommendation.
@@ -239,8 +240,6 @@
       * Novelty
       * Serendipity
       * Increased recommendation diversity
-    
-    cf. MovieTweetings: [White paper](http://crowdrec2013.noahlab.com.hk/papers/crowdrec2013_Dooms.pdf), [Github account set up](https://github.com/sidooms/MovieTweetings), [Simon Doom's slides](https://www.slideshare.net/simondooms/movie-tweetings-a-movie-rating-dataset-collected-from-twitter)
 
 
  ### 2. Matrix Factorization for Recommendations
