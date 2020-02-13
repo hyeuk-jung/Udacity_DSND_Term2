@@ -41,6 +41,8 @@ Finally, I participated in a Kaggle competition to evaluate the supervised learn
 ## 3. File Descriptions
   Due to the sensitive nature of dataset, it is not made publicly available to the general public.
   ```
+  - models_and_results # pickled models and prediction results
+
   - Arvato Project Workbook.html
   - Arvato Project Workbook.ipynb
   - README.md
@@ -102,9 +104,9 @@ This part refers to `Part 3: Kaggle Competition` in the jupyter notebook.  <br>H
 <a id='conclusion'></a>
 
 ## 5. Conclusion
-After testing the performance of several models based on cross-validation result, I used `xxxxxxx`, and trained the model by using a 5 folds validation method. Finally, I submitted the result to Kaggle competition and achieved a 0.xxxxxx roc_auc_score.
+After testing the performance of several models based on cross-validation result, I used `XGBoostClassifier`, and trained the model by using a 5 folds validation method. Finally, I submitted the result to Kaggle competition and achieved a 0.6486 roc_auc_score.
 
-The detailed explanation and results can be found at the post available [here](https://medium.com/@hyeukjung213/for-incoming-developers-what-should-you-expect-from-the-market-and-what-is-expected-from-you-b74fffd4ef31).
+The detailed explanation and results can be found at the post available [here](https://medium.com/@hyeukjung213/kaggle-competition-identification-of-customer-segments-and-finding-potential-customers-of-93b73271bdc0).
 
 
 <a id='credits'></a>
