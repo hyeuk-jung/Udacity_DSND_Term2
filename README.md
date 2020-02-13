@@ -12,3 +12,6 @@ Data Engineering
 
 ## [Part 10](https://github.com/hyeuk-jung/Udacity_DSND_Term2/tree/master/Part%2010.%20Experimental%20Design%20%26%20Recommendation%20Engines)
 Experimental Design and Recommendation Engines
+
+## [Part 11](https://github.com/hyeuk-jung/Udacity_DSND_Term2/tree/master/Part%2011.%20Data%20Scientist%20Capstone)
+Capstone Project: Create a Customer Segmentation Report for Arvato Financial Services
