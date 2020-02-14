@@ -92,7 +92,7 @@ This part refers to `Part 2: Supervised Learning Model` in the jupyter notebook.
     * Gradient Boosting
     * XGBoost
     * LightBGM 
-  * Use `GridSearchCV` to try multiple combinations of parameters to find the optimal model
+  * Use `GridSearchCV` and `Bayesian Optimization` to try multiple combinations of parameters to find the optimal model
   * Use `Area Under Curve (AUC)` for the ROC curve to evaluate the models
 
 <a id='kaggle_competition'></a>
@@ -104,7 +104,7 @@ This part refers to `Part 3: Kaggle Competition` in the jupyter notebook.  <br>H
 <a id='conclusion'></a>
 
 ## 5. Conclusion
-After testing the performance of several models based on cross-validation result, I used `XGBoostClassifier`, and trained the model by using a 5 folds validation method. Finally, I submitted the result to Kaggle competition and achieved a 0.6486 roc_auc_score.
+After testing the performance of several models based on cross-validation result, I used `Gradient Boosting Classifier`, and trained the model by using a `Bayesian Optimization` method. Finally, I submitted the result to Kaggle competition and achieved a 0.65388 roc_auc_score.  <br>(XGBoost's AUC = 0.65095)
 
 The detailed explanation and results can be found at the post available [here](https://medium.com/@hyeukjung213/kaggle-competition-identification-of-customer-segments-and-finding-potential-customers-of-93b73271bdc0).
 
